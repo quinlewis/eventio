@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Eventio</title>
+  </head>
+  <body>
+    <h1>Eventio</h1>
+    <h2>Events List</h2>
+{% for event in events %}
+  <div>
+    <h3>{{ event.name }}</h3>
+      {% if event.capacity %}
+       <p>capacity: {{ event.capacity }}</p>
+      {% endif %}
+    <p>{{ event.description }}</p>
+    <d1>
+      <dt><strong>When:</strong></dt>
+      <dd>{{ event.start_time }}</dd>
+      <dt>Where:</dt>
+      <dd{{ event.location }}</dd>
+      <dt>Price:</dt>
+      <dd>
+        {% if event.price %}
+          ${{ event.price }}
+        {% else %}
+          FREE
+        {% endif %}
+      </dd>
+    </dl>
+  </div>
+
+{% endfor %}
+
+  </body>
+</html>
