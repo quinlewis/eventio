@@ -1,0 +1,29 @@
+{% extends '_partials/base.html' %}
+
+{% block content %}
+  <div>
+    <h3>{{ event.name }}</h3>
+    <p>
+      {% if event.capacity %}
+       capacity: {{ event.capacity }}
+      {% endif %}
+    </p>
+    <p>{{ event.description }}
+    <d1>
+      <dt><strong>When:</strong></dt>
+      <dd>{{ event.start_time }}</dd>
+      <dt>Where:</dt>
+      <dd{{ event.location }}</dd>
+      <dt>Price:</dt>
+      <dd>
+        {% if event.price %}
+          ${{ event.price }}
+        {% else %}
+          FREE
+        {% endif %}
+      </dd>
+    </dl>
+  </div>
+  </div>
+
+{% endblock content %}
